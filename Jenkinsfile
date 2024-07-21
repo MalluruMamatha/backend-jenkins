@@ -43,7 +43,7 @@ pipeline{
                 sh """
                 zip -q -r backend-${appversion}.zip * -x Jenkinsfile -x backend-${appversion}.zip
                 ls -ltr
-                unzip backend-1.0.0.zip
+                unzip backend-1.0.0.zip [n]o
                 """
             }
         }
@@ -54,7 +54,7 @@ pipeline{
 
         always{
             echo 'always say hello' 
-            deleteDir()  ////delete workspace when build is done
+            //deleteDir()  ////delete workspace when build is done
         }
         success{
             echo 'i will run when pipeline is success'
