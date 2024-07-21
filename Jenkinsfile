@@ -1,6 +1,6 @@
 pipeline{
     agent {
-        label 'AGENT-1'
+        label 'agent-1'
     }
     options{ /// using option we can specify the time that pipeline should execute 
     //(with in the time it get complets)
@@ -10,11 +10,7 @@ pipeline{
        
     }
 
-   
-
-   
-
-    stages{
+   stages{
         stage('test'){
             steps{
                 sh """
