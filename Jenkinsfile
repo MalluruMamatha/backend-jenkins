@@ -44,10 +44,10 @@ pipeline{
 
         always{
             echo 'always say hello' 
-            deleteDir()  ////delete workspace when build is done
+            //deleteDir()  ////delete workspace when build is done
         }
         success{
-            echo 'i will run when is success'
+            echo 'i will run when pipeline is success'
 
         }
         failure{
