@@ -47,7 +47,7 @@ pipeline{
             //deleteDir()  ////delete workspace when build is done
         }
         success{
-            echo 'i will run when pipeline is success'
+            echo 'i will run when is success'
 
         }
         failure{
