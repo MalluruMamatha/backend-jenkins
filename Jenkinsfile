@@ -43,6 +43,7 @@ pipeline{
                 sh """
                 zip -q -r backend-${appversion}.zip * -x Jenkinsfile -x backend-${appversion}.zip
                 ls -ltr
+                unzip backend-1.0.0.zip
                 """
             }
         }
