@@ -13,6 +13,7 @@ pipeline{
     environment{
 
         def appversion = '' // variable declaration
+     
     }
 
    stages{
@@ -38,7 +39,7 @@ pipeline{
             }
         }
 
-                /// zip -r <filename>.zip <which file you want to zip> 
+                /// zip -r <filename.zip> <which file you want to zip> 
                 // * --> means all files will include 
                 // -x Jenkinsfile-----> means we are excluding the Jenkinsfile 
 
