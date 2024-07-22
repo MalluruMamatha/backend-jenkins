@@ -12,7 +12,7 @@ pipeline{
 
     environment{
 
-        def appversion = ''
+        def appversion = '' // variable declaration
     }
 
    stages{
@@ -20,8 +20,8 @@ pipeline{
         stage('read version'){
             steps{
                 script{
-                    def packageJSON = readJSON file: 'package.json'
-                    appversion = packageJSON.version
+                    def packageJSON = readJSON file: 'package.json' // here we are reading the package.json file
+                    appversion = packageJSON.version // in the package.json file we are getting the version
                     echo "application version is: $appversion"
                 }
             }
@@ -38,12 +38,15 @@ pipeline{
             }
         }
 
+                /// zip -r <filename>.zip <which file you want to zip> 
+                // * --> means all files will include 
+                // -x Jenkinsfile-----> means we are excluding the Jenkinsfile 
+
         stage('build'){
             steps{
                 sh """
                 zip -q -r backend-${appversion}.zip * -x Jenkinsfile -x backend-${appversion}.zip
                 ls -ltr
-                unzip backend-1.0.0.zip [n]o
                 """
             }
         }
