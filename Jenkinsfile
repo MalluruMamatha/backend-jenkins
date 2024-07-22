@@ -13,7 +13,7 @@ pipeline{
     environment{
 
         def appversion = '' // variable declaration
-        def nexusUrl = 'http://18.234.230.220:8081/repository/backend/'
+        def nexusUrl = 'nexus.malluru.online:8081'
      
     }
 
@@ -62,7 +62,7 @@ pipeline{
                         groupId: 'com.expense',
                         version: "${appversion}",
                         repository: "backend",
-                        credentialsId: "nexus-auth",
+                        credentialsId: 'nexus-auth',
                         artifacts: [
                             [artifactId: "backend",
                             classifier: '',
